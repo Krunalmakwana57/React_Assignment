@@ -1,24 +1,92 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./Components/Header";
+import Footer from "./Components/Footer";
+import Service from "./Pages/Service";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Project from "./Pages/Project";
+import Testimonial from "./Pages/Testimonial";
+import Contact from "./Pages/Contact";
+import Login from "./Pages/Login";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Header />
+                <Home />
+                <Footer />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/service"
+            element={
+              <>
+                <Header />
+                <Service />
+                <Footer />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/about"
+            element={
+              <>
+                <Header />
+                <About />
+                <Footer />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/project"
+            element={
+              <>
+                <Header />
+                <Project />
+                <Footer />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/testimonial"
+            element={
+              <>
+                <Header />
+                <Testimonial />
+                <Footer />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/contact"
+            element={
+              <>
+                <Header />
+                <Contact />
+                <Footer />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/login"
+            element={
+              <>
+                <Header />
+                <Login />
+                <Footer />
+              </>
+            }
+          ></Route>
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
